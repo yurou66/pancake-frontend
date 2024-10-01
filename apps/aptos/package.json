@@ -26,6 +26,7 @@
     "@pancakeswap/swap-sdk-core": "workspace:*",
     "@pancakeswap/token-lists": "workspace:*",
     "@pancakeswap/tokens": "workspace:*",
+    "@pancakeswap/tsconfig": "workspace:*",
     "@pancakeswap/ui-wallets": "workspace:*",
     "@pancakeswap/uikit": "workspace:*",
     "@pancakeswap/utils": "workspace:*",
