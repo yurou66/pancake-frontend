@@ -2,18 +2,9 @@ import { useIsMounted } from "@pancakeswap/hooks";
 import throttle from "lodash/throttle";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { styled } from "styled-components";
-import { AtomBox } from "../../components/AtomBox";
-import BottomNav from "../../components/BottomNav";
 import { Box } from "../../components/Box";
-import Flex from "../../components/Box/Flex";
-import CakePrice from "../../components/CakePrice/CakePrice";
-import Footer from "../../components/Footer";
-import LangSelector from "../../components/LangSelector/LangSelector";
-import MenuItems from "../../components/MenuItems/MenuItems";
-import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
-import Logo from "./components/Logo";
-import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
+import { MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
 import { MenuContext } from "./context";
 import { NavProps } from "./types";
 
@@ -137,7 +128,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   const providerValue = useMemo(() => ({ linkComponent }), [linkComponent]);
   return (
     <MenuContext.Provider value={providerValue}>
-      <AtomBox
+      {/* <AtomBox
         asChild
         minHeight={{
           xs: "auto",
@@ -196,8 +187,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
             <Inner>{children}</Inner>
           </BodyWrapper>
         </Wrapper>
-      </AtomBox>
-      <Footer
+      </AtomBox> */}
+      <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        <Inner>{children}</Inner>
+      </BodyWrapper>
+      {/* <Footer
         chainId={chainId}
         items={footerLinks}
         isDark={isDark}
@@ -209,10 +203,10 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         buyCakeLabel={buyCakeLabel}
         buyCakeLink={buyCakeLink}
         mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-      />
-      <AtomBox display={{ xs: "block", lg: "none" }}>
+      /> */}
+      {/* <AtomBox display={{ xs: "block", lg: "none" }}>
         <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />
-      </AtomBox>
+      </AtomBox> */}
     </MenuContext.Provider>
   );
 };

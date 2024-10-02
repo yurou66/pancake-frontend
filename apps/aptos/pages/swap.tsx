@@ -33,7 +33,6 @@ import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { useUserSlippage } from '@pancakeswap/utils/user'
 import { useIsExpertMode } from '@pancakeswap/utils/user/expertMode'
 import { CurrencyInputPanel } from 'components/CurrencyInputPanel'
-import { ExchangeLayout } from 'components/Layout/ExchangeLayout'
 import { PageMeta } from 'components/Layout/Page'
 import { SettingsButton } from 'components/Menu/Settings/SettingsButton'
 import { SettingsModal, withCustomOnDismiss } from 'components/Menu/Settings/SettingsModal'
@@ -554,6 +553,6 @@ const SwapPage = () => {
   )
 }
 
-SwapPage.Layout = ExchangeLayout
+// SwapPage.Layout = ExchangeLayout
 
 export default SwapPage

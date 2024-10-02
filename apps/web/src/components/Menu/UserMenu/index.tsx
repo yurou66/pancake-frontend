@@ -1,12 +1,9 @@
-import { ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Flex,
   LogoutIcon,
-  RefreshIcon,
   UserMenu as UIKitUserMenu,
-  UserMenuDivider,
   UserMenuItem,
   UserMenuVariant,
   useModal,
@@ -17,13 +14,10 @@ import Trans from 'components/Trans'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 import { useDomainNameForAddress } from 'hooks/useDomain'
-import NextLink from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { usePendingTransactions } from 'state/transactions/hooks'
 import { useAccount } from 'wagmi'
-import ClaimYourNFT from './ClaimYourNFT'
-import ProfileUserMenuItem from './ProfileUserMenuItem'
 import WalletModal, { WalletView } from './WalletModal'
 import WalletUserMenuItem from './WalletUserMenuItem'
 
@@ -52,11 +46,11 @@ const UserMenuItems = () => {
   return (
     <>
       <WalletUserMenuItem isWrongNetwork={isWrongNetwork} onPresentWalletModal={onClickWalletMenu} />
-      <UserMenuItem as="button" disabled={isWrongNetwork} onClick={onPresentTransactionModal}>
+      {/* <UserMenuItem as="button" disabled={isWrongNetwork} onClick={onPresentTransactionModal}>
         {t('Recent Transactions')}
         {hasPendingTransactions && <RefreshIcon spin />}
-      </UserMenuItem>
-      <UserMenuDivider />
+      </UserMenuItem> */}
+      {/* <UserMenuDivider />
       <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
         <UserMenuItem disabled={isWrongNetwork || chainId !== ChainId.BSC}>{t('Your NFTs')}</UserMenuItem>
       </NextLink>
@@ -66,7 +60,7 @@ const UserMenuItems = () => {
         hasProfile={hasProfile}
         disabled={isWrongNetwork || chainId !== ChainId.BSC}
       />
-      <UserMenuDivider />
+      <UserMenuDivider /> */}
       <UserMenuItem as="button" onClick={logout}>
         <Flex alignItems="center" justifyContent="space-between" width="100%">
           {t('Disconnect')}

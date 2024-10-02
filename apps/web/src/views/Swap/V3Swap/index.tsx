@@ -1,9 +1,9 @@
 import { SmartRouter } from '@pancakeswap/smart-router/evm'
+import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
 import { useMemo } from 'react'
 import { logger } from 'utils/datadog'
-import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
 
-import { BuyCryptoLink, FormHeader, FormMain, PricingAndSlippage, TradeDetails } from './containers'
+import { FormHeader, FormMain, PricingAndSlippage } from './containers'
 import { CommitButton } from './containers/CommitButton'
 import { useAllTypeBestTrade } from './hooks/useAllTypeBestTrade'
 import { useCheckInsufficientError } from './hooks/useCheckSufficient'
@@ -94,9 +94,9 @@ export function V3SwapForm() {
         }
       />
 
-      <BuyCryptoLink currency={insufficientFundCurrency} />
+      {/* <BuyCryptoLink currency={insufficientFundCurrency} />
 
-      <TradeDetails loaded={tradeLoaded} order={bestOrder} />
+      <TradeDetails loaded={tradeLoaded} order={bestOrder} /> */}
     </>
   )
 }
